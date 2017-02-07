@@ -3,9 +3,10 @@
   <head>
 
   </head>
-    <title>Brewery Database</title>
+    <title>Brew Mapper</title>
 
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+      <!-- <script src="app.js" -->
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -19,19 +20,22 @@
       <a href="map.html"></a>
   <body>
       <header>
-          <div class ="titles"></div>
-            <p class="main_title">BREW MAPPER</p>
-            <p class="small_title">FIND A BREW NEAR YOU</p>
-
-            <nav>
-                <ul>
-                  <li><a href="#">HOME</a></li>
-                  <li><a href="#">ABOUT</a></li>
-                  <li><a href="#">SERVICES</a></li>
-                  <li><a href="#">BLOG</a></li>
-                  <li><a href="#">CONTACT</a></li>
-                </ul>
-            </nav>
+          <div class ="titles">
+            <img class="beer_logo" src="images/tiny_beer.png" />
+            <div>
+              <h1 class="main_title">BREW MAPPER</h1>
+              <p class="small_title">FIND A BREW NEAR YOU</p>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="login.html">SIGN IN</a></li>
+              <li><a href="#">MY BREWERIES</a></li>
+              <li><a href="map.html">MAP</a></li>
+              <li><a href="#">SEARCH BY NAME</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </nav>
       </header>
 
   <main>
@@ -41,20 +45,15 @@
     <div class="jumbotron">
       <!-- <img class= "img1" src="images/pexels-photo-beerglass.jpeg" /> -->
       <div class="container">
-        <h1 class="j_title">Brewery Finder</h1>
-        <input type="text" value="Zip Code" />
-        <button name="location_button" type= "submit" value="search">Search Location</button>
-        <!-- <p class="lead">Search Here</p> -->
+        <div>
+
+
+          <!-- <h1 class="j_title">Brewery Finder</h1> -->
+          <input type="number" placeholder="Zip Code" />
+          <button name="location_button" type= "submit" value="search">Search Location</button>
+        </div>
       </div>
     </div>
-
-
-    <!-- <div class="jumbotron">
-      <img id= "img1" src="images/pexels-photo-beerglass.jpeg" />
-      <h1>Brewery</h1>
-      <p>...</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Locate</a></p>
-</div> -->
 
   </main>
 
