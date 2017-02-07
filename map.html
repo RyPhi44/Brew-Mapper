@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <link rel="stylesheet" href="stylesheet.css" style="text/css"/>
+    <style>
+       #map {
+        height: 400px;
+        width: 50%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>Brews Near You</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var denver = {lat: 39.742043, lng: -104.991531};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: denver
+        });
+        var marker = new google.maps.Marker({
+          position: denver,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ1K02-VCj3jpSz0_dkBpOtV9m1CecG3g&callback=initMap">
+    </script>
+  </body>
+
+
+</html>
