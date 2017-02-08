@@ -1,4 +1,4 @@
-var map
+var map, infoWindows = [];
 $(document).ready(function(){
 
 // sends request to brewerydb for information on breweries
@@ -10,6 +10,19 @@ $(document).ready(function(){
         position: {lat: brewery.latitude, lng: brewery.longitude},
         map: map
       });
+      var infowindow = new google.maps.InfoWindow({
+        content: "<h1>"+brewery.brewery.name+"</h1>", 
+
+      });
+      infoWindows.push(infowindow);
+
+      marker.addListener('click', function() {
+        for (var i = 0; i < infoWindows.length; i++) {
+          infoWindows[i].close()
+        }
+        infowindow.open(map, marker);
+      });
+
     });
   })
 });
@@ -20,6 +33,8 @@ function initMap() {
     zoom: 10,
     center: denver
   });
+
 }
+
 
 // When marker is clicked, marker is highlighted and information about selected brewery is added to page
