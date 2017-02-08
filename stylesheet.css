@@ -166,8 +166,9 @@ width: 100%;
 
 #map{
   border: 1px solid black;
-  display: block;
+  display: flex;
   margin: auto;
+
 
 }
 
