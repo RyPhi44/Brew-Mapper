@@ -202,3 +202,30 @@ h3 {
   justify-content: center;
   align-items: center;
 }
+
+.nameTag {
+  color: hsl(200, 100%, 80%);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-style: italic;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 30px;
+
+}
+.markerTag {
+  font-style: italic;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 15px;
+}
+
+.phoneTag {
+  font-style: italic;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 15px;
+}
+
+.webTag {
+  font-style: italic;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 15px;
+}
