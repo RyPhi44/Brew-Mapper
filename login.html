@@ -2,21 +2,57 @@
 <html>
   <head>
     <title>Brew Login</title>
-    <link rel="shortcut icon" href="images/tiny_beer.png" /> 
+    <link rel="shortcut icon" href="images/tiny_beer.png" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="stylesheet.css" style="text/css"/>
   </head>
   <body>
-    <h3>Brew Login</h3>
-      <div class="loginContainer">
-        <h2 class="login">Username</h2>
-        <input type="text" placeholder="Username" />
-
-        <h2 class="password">Password</h2>
-        <input type="password" placeholder="Password" />
-        <button name="loginSubmit" type= "submit">Submit</button>
+    <header class="loginHeader">
+      <div class="loginTitle">
+        <h3>Brew Login</h3>
       </div>
-
+      <div class="loginHome">
+        <nav>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="map.html">MAP</a></li>
+            <li><a href="mybrews.html">MY BREWERIES</a></li>
+            <li><a href="search.html">SEARCH BY NAME</a></li>
+          </ul>
+        </nav>
+      </div>
+      </header>
+  <div class="mainLogin">
+        <form class="form-horizontal">
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Sign In</button>
+        </div>
+      </div>
+    </form>
+        </div>
+  </div>
     <footer class = "footer2">
       <p class="copyright">Copyright &copy 2017 - All Rights Reserved - Brew Mapper</p>
     </footer>

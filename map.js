@@ -3,6 +3,7 @@ $(document).ready(function(){
 
 // sends request to brewerydb for information on breweries
   $.get("http://galvanize-cors-proxy.herokuapp.com/http://api.brewerydb.com/v2/locations/?key=f16dad2851cec7f5e563c75bc9a760b1&region=colorado&locationType=micro,macro,nano,cidery", function(result) {
+
 console.log(result);
     result.data.forEach(function(brewery) {
       // $("ul").append("<li>"+brewery.brewery.name+"</li>")
@@ -10,12 +11,18 @@ console.log(result);
         position: {lat: brewery.latitude, lng: brewery.longitude},
         map: map
       });
+      var content = "<h1 class='nameTag'>"+brewery.brewery.name+"</h1>" +
+        "<p class='markerTag'>"+brewery.streetAddress+", "+brewery.locality+", "+brewery.region+" "+brewery.postalCode+"</p>"
+      if (brewery.phone !== undefined) {
+        content += "<p class='phoneTag'>"+"Phone: "+brewery.phone+"</p>" ;
+      }
+      if (brewery.website !== undefined) {
+        content += "<p class='webTag'>"+brewery.website+"</p>" ;
+      }
+
       var infowindow = new google.maps.InfoWindow({
-        content:
-        "<h1 class='nameTag'>"+brewery.brewery.name+"</h1>" +
-        "<p class='markerTag'>"+brewery.streetAddress+", "+brewery.locality+", "+brewery.region+" "+brewery.postalCode+"</p>" + 
-        "<p class='phoneTag'>"+"Phone: "+brewery.phone+"</p>" +
-         "<p class='webTag'>"+"Website: "+brewery.website+"</p>"
+        content,
+        maxWidth: 300
       });
 
       infoWindows.push(infowindow);
@@ -37,6 +44,8 @@ function initMap() {
     zoom: 10,
     center: denver
   });
+
+  document.getElementById("location_button").addEventListener("click", result);
 
 }
 
