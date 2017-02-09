@@ -46,23 +46,20 @@ nav li a{
   font-size: 20px;
   -webkit-text-stroke-width: .5px;
   -webkit-text-stroke-color: white;
-
 }
 
 ul{
   margin: 0px;
   display:inline-block;
   padding: 0px;
-
-
 }
+
 li{
   display: inline;
   align-items: center;
   justify-content: center;
   border: 2px solid black;
   padding: 20px;
-
 }
 
 html, body{
@@ -92,7 +89,6 @@ header{
   padding: 10px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .jumbotron{
@@ -109,7 +105,6 @@ header{
   align-items: flex-end;
   height: 500px;
   padding: 40px;
-
 }
 
 .j_title{
@@ -130,7 +125,6 @@ header{
 
 input, button{
 margin: .5rem;
-
 }
 
 footer{
@@ -141,7 +135,6 @@ footer{
   background-color: hsl(200, 100%, 80%);
   width: 100%;
   padding: 5px;
-
 }
 
 .copyright {
@@ -155,7 +148,6 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 section {
@@ -167,8 +159,20 @@ width: 100%;
   border: 1px solid black;
   display: flex;
   margin: auto;
+  margin-top: 10px;
+}
 
+.zipSearch{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
 h3 {
@@ -200,6 +204,7 @@ h3 {
   display: flex;
   justify-content: center;
   font-family: Impact, Charcoal, sans-serif;
+  margin-top: 100px;
 }
 
 .nameTag {
@@ -244,10 +249,36 @@ h3 {
 .brewSearch{
   display: flex;
   justify-content: center;
+  margin-top: 250px;
 }
 
 .searchBox {
   width: 300px;
   height: 20px;
-
 }
+
+/*@media screen and (min-width: 768px){
+.jumbotronSearch .containerSearch {
+  background-size: cover;
+  background-image: url("images/ERB_Brewery7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  }
+}
+
+.jumbotronSearch{
+  background-size: cover;
+  background-image: url("images/ERB_Brewery7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 500px;
+  padding: 40px;
+}*/
