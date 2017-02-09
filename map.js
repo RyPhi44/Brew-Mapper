@@ -16,8 +16,13 @@ $(document).ready(function(){
           map: map
         });
         markers.push(marker)
-        var content = "<h1 class='nameTag'>"+brewery.brewery.name+"</h1>" +
-          "<p class='markerTag'>"+brewery.streetAddress+", "+brewery.locality+", "+brewery.region+" "+brewery.postalCode+"</p>"
+        var content = "<h1 class='nameTag'>"+brewery.brewery.name+"</h1>"
+        if (brewery.streetAddress === undefined) {
+          content += "<p class='markerTag'>"+brewery.locality+", "+brewery.region+" "+brewery.postalCode+"</p>"
+        }else{
+          content += "<p class='markerTag'>"+brewery.streetAddress+", "+brewery.locality+", "+brewery.region+" "+brewery.postalCode+"</p>"
+        }
+
         if (brewery.phone !== undefined) {
           content += "<p class='phoneTag'>"+"Phone: "+brewery.phone+"</p>" ;
         }
