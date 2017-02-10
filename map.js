@@ -2,12 +2,13 @@ var map, infoWindows = [], markers = [];
 $(document).ready(function(){
 
 // sends request to brewerydb for information on breweries
-    function findData(postalCode){
-      postalCode = postalCode || 80202
+    function findData(locality){
+      locality = locality || "Denver"
+
       for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(null)
       }
-      $.get("http://galvanize-cors-proxy.herokuapp.com/http://api.brewerydb.com/v2/locations/?key=f16dad2851cec7f5e563c75bc9a760b1&postalCode="+postalCode+"&locationType=micro,macro,nano,cidery", function(result) {
+      $.get("http://galvanize-cors-proxy.herokuapp.com/http://api.brewerydb.com/v2/locations/?key=f16dad2851cec7f5e563c75bc9a760b1&locality="+locality+"&locationType=micro,macro,nano,cidery", function(result) {
         console.log(result);
       result.data.forEach(function(brewery) {
         // $("ul").append("<li>"+brewery.brewery.name+"</li>")
@@ -64,9 +65,32 @@ function initMap() {
     center: denver
   });
 
+  var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('location_button').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+
+
+  // marker.addListener('click', function() {
+  //      map.setZoom(8);
+  //      map.setCenter(marker.getPosition());
+  //    });
 
 
 }
-
-
-// When marker is clicked, marker is highlighted and information about selected brewery is added to page
