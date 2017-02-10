@@ -14,7 +14,8 @@ $(document).ready(function(){
         // $("ul").append("<li>"+brewery.brewery.name+"</li>")
         var marker = new google.maps.Marker({
           position: {lat: brewery.latitude, lng: brewery.longitude},
-          map: map
+          map: map,
+          animation: google.maps.Animation.DROP
         });
         markers.push(marker)
         var content = "<h1 class='nameTag'>"+brewery.brewery.name+"</h1>"
@@ -33,7 +34,7 @@ $(document).ready(function(){
 
         var infowindow = new google.maps.InfoWindow({
           content,
-          maxWidth: 300
+          maxWidth: 400
         });
 
         infoWindows.push(infowindow);
@@ -55,8 +56,8 @@ $(document).ready(function(){
     var zipData = $(".zipInput").val()
     findData(zipData)
   })
+  initMap();
 
-});
 
 function initMap() {
   var denver = {lat: 39.742043, lng: -104.991531};
@@ -69,6 +70,11 @@ function initMap() {
 
         document.getElementById('location_button').addEventListener('click', function() {
           geocodeAddress(geocoder, map);
+        });
+        $("#address").keyup(function(event){
+          if(event.keyCode == 13){
+        $("#location_button").click();
+            }
         });
       }
 
@@ -93,4 +99,5 @@ function initMap() {
   //    });
 
 
-}
+  }
+});

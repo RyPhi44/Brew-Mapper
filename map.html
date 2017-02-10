@@ -6,7 +6,11 @@
   <link rel="shortcut icon" href="images/tiny_beer.png" />
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <link rel="stylesheet" href="stylesheet.css" style="text/css"/>
-  <script src="map.js"></script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ1K02-VCj3jpSz0_dkBpOtV9m1CecG3g&callback=initMap">
+  </script>
+
     <style>
        #map {
         height: 400px;
@@ -30,20 +34,18 @@
       <section>
         <div id="map">
 
-          <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ1K02-VCj3jpSz0_dkBpOtV9m1CecG3g&callback=initMap">
-          </script>
+
         </div>
       </section>
     </container>
     <div class="zipSearch">
-      <input id="address" class="zipInput" type="text" placeholder="City" />
+      <input id="address" class="zipInput" type="text" placeholder="Enter a City" autocomplete= "on" />
       <button id="location_button" type= "submit" value="search">Search Location</button>
     </div>
     <footer class = "footer2">
       <p class="copyright">Copyright &copy 2017 - All Rights Reserved - Brew Mapper</p>
     </footer>
-
+      <script src="map.js"></script>
   </body>
 
 
